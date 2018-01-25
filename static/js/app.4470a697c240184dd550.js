@@ -132,7 +132,7 @@ function randomNum(minNum, maxNum) {
       this.currentWordIndex = currentWordIndex;
     },
     async getNewWorldsData() {
-      let res = await this.axios.get("/static/words.json");
+      let res = await this.axios.get("./static/words.json");
       console.log(res);
 
       return res.data;
