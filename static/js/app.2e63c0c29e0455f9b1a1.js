@@ -322,9 +322,9 @@ async function getNewWorldsData(url) {
       if (localStorage.userMemoryDataStr) {
         this.userMemoryData = JSON.parse(localStorage.userMemoryDataStr);
       }
-      console.log('userMemoryData', userMemoryData);
 
       let userMemoryData = this.userMemoryData;
+      console.log('userMemoryData', userMemoryData);
 
       let overWordSum = 0;
       let countSum = 0;
@@ -548,7 +548,7 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Sum_vue__ = __webpack_require__(15);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_544862bc_hasScoped_false_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Sum_vue__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3c81c43c_hasScoped_false_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Sum_vue__ = __webpack_require__(48);
 function injectStyle (ssrContext) {
   __webpack_require__(47)
 }
@@ -568,7 +568,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Sum_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_544862bc_hasScoped_false_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Sum_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3c81c43c_hasScoped_false_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Sum_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -596,4 +596,4 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 
 /***/ })
 ],[16]);
-//# sourceMappingURL=app.d1d1ccfc28ccd13d2e2c.js.map
+//# sourceMappingURL=app.2e63c0c29e0455f9b1a1.js.map
