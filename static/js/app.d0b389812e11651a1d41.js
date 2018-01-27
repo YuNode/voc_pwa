@@ -203,7 +203,7 @@ function randomNum(minNum, maxNum) {
       console.log('save userMemoryDataStr finished');
     }, 1000 * 10);
 
-    this.words = await Object(__WEBPACK_IMPORTED_MODULE_0__utils__["a" /* getNewWorldsData */])('./static/words.json');
+    this.words = await Object(__WEBPACK_IMPORTED_MODULE_0__utils__["a" /* getNewWorldsData */])('static/words.json');
 
     this.wordsKeys = Object.keys(this.words);
 
@@ -319,7 +319,7 @@ async function getNewWorldsData(url) {
 
     this.overWordSum = overWordSum;
 
-    let words = await Object(__WEBPACK_IMPORTED_MODULE_0__utils__["a" /* getNewWorldsData */])('./static/words.json');
+    let words = await Object(__WEBPACK_IMPORTED_MODULE_0__utils__["a" /* getNewWorldsData */])('static/words.json');
     console.log('words', words);
 
     this.wordsLength = Object.keys(words).length;
