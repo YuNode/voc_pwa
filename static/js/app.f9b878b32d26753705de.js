@@ -287,6 +287,9 @@ async function getNewWorldsData(url) {
 //
 //
 //
+//
+//
+//
 
 
 
@@ -296,33 +299,44 @@ async function getNewWorldsData(url) {
     return {
       todayStr: Object(__WEBPACK_IMPORTED_MODULE_0__utils__["b" /* getTodayStr */])(),
       overWordSum: 0,
+      countSum: 0,
       wordsLength: 0,
       userMemoryData: null
     };
   },
-  async created() {
-    if (localStorage.userMemoryDataStr) {
-      this.userMemoryData = JSON.parse(localStorage.userMemoryDataStr);
-    }
+  // async created() {
+  // },
+  mounted: function () {
+    this.$nextTick(async () => {
+      if (localStorage.userMemoryDataStr) {
+        this.userMemoryData = JSON.parse(localStorage.userMemoryDataStr);
+      }
 
-    let userMemoryData = this.userMemoryData;
+      let userMemoryData = this.userMemoryData;
 
-    let overWordSum = 0;
-    if (userMemoryData.daysRecord) {
-      for (let day in userMemoryData.daysRecord) {
-        let dayRecord = userMemoryData.daysRecord[day];
-        if (dayRecord.pass) {
-          overWordSum += dayRecord.pass;
+      let overWordSum = 0;
+      let countSum = 0;
+      if (userMemoryData.daysRecord) {
+        for (let day in userMemoryData.daysRecord) {
+          let dayRecord = userMemoryData.daysRecord[day];
+          if (dayRecord.pass) {
+            overWordSum += dayRecord.pass;
+          }
+
+          if (dayRecord.count) {
+            countSum += dayRecord.count;
+          }
         }
       }
-    }
 
-    this.overWordSum = overWordSum;
+      this.overWordSum = overWordSum;
+      this.countSum = countSum;
 
-    let words = await Object(__WEBPACK_IMPORTED_MODULE_0__utils__["a" /* getNewWorldsData */])('static/words.json');
-    console.log('words', words);
+      let words = await Object(__WEBPACK_IMPORTED_MODULE_0__utils__["a" /* getNewWorldsData */])('static/words.json');
+      console.log('words', words);
 
-    this.wordsLength = Object.keys(words).length;
+      this.wordsLength = Object.keys(words).length;
+    });
   }
 });
 
@@ -452,7 +466,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */].use(__WEBPACK_IMPORTED_MODU
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Home_vue__ = __webpack_require__(7);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_87b61500_hasScoped_false_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Home_vue__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_e55b5102_hasScoped_false_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Home_vue__ = __webpack_require__(45);
 function injectStyle (ssrContext) {
   __webpack_require__(26)
 }
@@ -472,7 +486,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Home_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_87b61500_hasScoped_false_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Home_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_e55b5102_hasScoped_false_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Home_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -523,7 +537,7 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Sum_vue__ = __webpack_require__(15);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_5c928bd2_hasScoped_false_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Sum_vue__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1bfd0250_hasScoped_false_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Sum_vue__ = __webpack_require__(48);
 function injectStyle (ssrContext) {
   __webpack_require__(47)
 }
@@ -543,7 +557,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Sum_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_5c928bd2_hasScoped_false_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Sum_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1bfd0250_hasScoped_false_transformToRequire_video_src_poster_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Sum_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -564,11 +578,11 @@ var Component = normalizeComponent(
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"hello"},[_c('div',[_c('span',[_vm._v("共有"+_vm._s(_vm.wordsLength)+"个单词")])]),_vm._v(" "),_c('div',[_c('span',[_vm._v("已经记住"+_vm._s(_vm.overWordSum)+"个单词")])]),_vm._v(" "),_c('br'),_vm._v(" "),(_vm.userMemoryData&&_vm.userMemoryData.daysRecord&&_vm.userMemoryData.daysRecord[_vm.todayStr])?_c('div',[_c('div',[_c('span',[_vm._v("今天记了"+_vm._s(_vm.userMemoryData.daysRecord[_vm.todayStr].count)+"个单词")])]),_vm._v(" "),_c('div',[_c('span',[_vm._v("其中，pass了"+_vm._s(_vm.userMemoryData.daysRecord[_vm.todayStr].pass)+"个")])])]):_c('div',[_vm._v("\n    今天没有数据\n  ")]),_vm._v(" "),_c('div',[_c('router-link',{attrs:{"to":"/home","href":"javascript:void(0);"}},[_vm._v("返回")])],1)])}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"hello"},[_c('div',[_c('span',[_vm._v("共有"+_vm._s(_vm.wordsLength)+"个单词")])]),_vm._v(" "),_c('div',[_c('span',[_vm._v("记了"+_vm._s(_vm.countSum)+"次")])]),_vm._v(" "),_c('div',[_c('span',[_vm._v("已经记住"+_vm._s(_vm.overWordSum)+"个单词")])]),_vm._v(" "),_c('br'),_vm._v(" "),(_vm.userMemoryData&&_vm.userMemoryData.daysRecord&&_vm.userMemoryData.daysRecord[_vm.todayStr])?_c('div',[_c('div',[_c('span',[_vm._v("今天记了"+_vm._s(_vm.userMemoryData.daysRecord[_vm.todayStr].count)+"个单词")])]),_vm._v(" "),_c('div',[_c('span',[_vm._v("其中，pass了"+_vm._s(_vm.userMemoryData.daysRecord[_vm.todayStr].pass)+"个")])])]):_c('div',[_vm._v("\n    今天没有数据\n  ")]),_vm._v(" "),_c('div',[_c('router-link',{attrs:{"to":"/home","href":"javascript:void(0);"}},[_vm._v("返回")])],1)])}
 var staticRenderFns = []
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
 
 /***/ })
 ],[16]);
-//# sourceMappingURL=app.d0b389812e11651a1d41.js.map
+//# sourceMappingURL=app.f9b878b32d26753705de.js.map
