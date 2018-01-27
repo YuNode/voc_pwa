@@ -237,7 +237,7 @@ async function getNewWorldsData() {
     if (localStorage.wordsStr) {
         wordsObj = JSON.parse(localStorage.wordsStr);
     } else {
-        let res = await __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get("/static/words.json");
+        let res = await __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get("./static/words.json");
         //console.log(res)
         wordsObj = res.data;
         localStorage.wordsStr = JSON.stringify(wordsObj);
@@ -571,4 +571,4 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 
 /***/ })
 ],[16]);
-//# sourceMappingURL=app.59b94ab23bceeeb69aa5.js.map
+//# sourceMappingURL=app.be762b327e7a7b5fa4c9.js.map
